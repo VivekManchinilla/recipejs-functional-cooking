@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecipeJS - Your Functional Cooking Companion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RecipeJS - Functional Cooking Companion</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>RecipeJS</h1>
+      <p class="subtitle">Functional Cooking Companion</p>
+    </div>
 
-    <header>
-        <h1>🍳 RecipeJS</h1>
-        <p>Your Functional Cooking Companion</p>
-    </header>
-
-    <main>
-
-        <!-- PART 2: CONTROLS -->
-        <section class="controls">
-
-            <!-- FILTER BUTTONS -->
-            <div class="filter-group">
-                <h3>Filter by Difficulty</h3>
-                <div class="button-group">
-                    <button class="filter-btn active" data-filter="all">Show All</button>
-                    <button class="filter-btn" data-filter="easy">Easy</button>
-                    <button class="filter-btn" data-filter="medium">Medium</button>
-                    <button class="filter-btn" data-filter="hard">Hard</button>
-                    <button class="filter-btn" data-filter="quick">Quick (&lt; 30 min)</button>
-                </div>
-            </div>
-
-            <!-- SORT BUTTONS -->
-            <div class="sort-group">
-                <h3>Sort Recipes</h3>
-                <div class="button-group">
-                    <button class="sort-btn" data-sort="name">Name (A–Z)</button>
-                    <button class="sort-btn" data-sort="time">Time (Fastest)</button>
-                    <button class="sort-btn active" data-sort="none">Default</button>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- RECIPE CARDS -->
-        <div id="recipe-container">
-            <!-- Recipe cards rendered here -->
+    <div class="controls">
+      <div class="control-group">
+        <span class="label">Filter difficulty:</span>
+        <div class="btn-row" id="filterRow">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="easy">Easy</button>
+          <button class="chip" data-filter="medium">Medium</button>
+          <button class="chip" data-filter="hard">Hard</button>
         </div>
+      </div>
 
-    </main>
+      <div class="control-group">
+        <label class="label" for="sortSelect">Sort by:</label>
+        <select id="sortSelect" class="select">
+          <option value="title-asc">Title (A → Z)</option>
+          <option value="title-desc">Title (Z → A)</option>
+          <option value="time-asc">Cook time (Low → High)</option>
+          <option value="time-desc">Cook time (High → Low)</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
-    <script src="app.js"></script>
+  <main class="page">
+    <section class="meta">
+      <div id="countText" class="count-text">Showing 0 of 8</div>
+    </section>
+
+    <section id="recipeContainer" class="recipe-grid" aria-label="Recipe list">
+      <!-- Cards injected by JS -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Part 3: IIFE + Recursion + Expandable Cards</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
